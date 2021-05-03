@@ -1,0 +1,90 @@
+@import '../../components/styles/variables.scss';
+@import '../../components/styles/mixins.scss';
+
+
+.leaf-animation-container {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  ul.leaf-list {
+    background-color: $white;
+    @include list-reset;
+    display: flex;
+    height: 100vh;
+    position: relative;
+    z-index: 4;
+    animation: fadeOut 3.5s ease-in 6s 1 normal forwards;
+    li {
+      @include list-reset;
+      max-width: 50px;
+      min-width: 40px;
+      img {
+        top: -1000px;
+        position: absolute;
+        width: 40px;
+      }
+    }
+  }
+}
+
+@keyframes fallingLeaves {
+  0% {
+    top: -200px;
+    transform: rotate(random(180)deg);
+  }
+  10% {
+    top: -150px;
+    transform: rotate(random(360)+deg -360);
+  }
+  20% {
+    top: -100px;
+    transform: rotate(random(360)+deg -360);
+  }
+  30% {
+    top: -50px;
+    transform: rotate(random(360)+deg -360);
+  }
+  40% {
+    top: 0px;
+    transform: rotate(random(360)+deg -360);
+  }
+  50% {
+    top: 50px;
+    transform: rotate(random(180)+deg);
+  }
+  60% {
+    top: 100px;
+    transform: rotate(random(360)+deg -360);
+  }
+  70% {
+    top: 150px;
+    transform: rotate(random(180)+deg);
+  }
+  80% {
+    top: 200px;
+    transform: rotate(random(360)+deg -360);
+    opacity: 1;
+  }
+  90% {
+    top: 250px;
+    transform: rotate(random(360)+deg -360);
+    opacity: 0.5;
+  }
+  100% {
+    top: 300px;
+    transform: rotate(random(360)+deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    // background-color: #FFFFFF;
+  }
+  to {
+    opacity: 0;
+    // background-color: transparent;
+  }
+}
